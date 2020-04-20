@@ -1,0 +1,5 @@
+1.Service的使用
+
+1） Service是四大组件之一，单例模式。
+2） Service的OnCreate()方法只调用一次,onStartCommand()方法可能调用多次。
+3）

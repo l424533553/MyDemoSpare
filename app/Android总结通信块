@@ -1,0 +1,45 @@
+一. Android 中的通信方式
+1. BroadCastReciver
+优点：1）许多系统级的事件都是通过广播来通知的，如短信、电量的改变
+      2）可以跨进程通信，如通过发送广播打开其他App的Activity
+缺点：消耗大量时间、空间，占资源。 并且需要依赖Context
+
+
+2. Handler
+   一般用于线程间的通信
+优点:1）体积小，不耗资源
+     2）发生问题可快速精准定位
+缺点:handler的定义类和内部类是绑定的，事件发布者和接收者高耦合
+
+3. greenrobot.EventBus
+   强烈推荐使用Rxjava Bus或者 liveDataBus 替换
+优点：1）灵活使用，不用依赖Context
+缺点：1）使用了EventBus的类混淆后找不到OnEvent这个方法,或者打包容易出现异常、崩溃状态
+      2）EventBus中的事件分发是通过注解函数的参数类型决定的,造成不必要的多余订阅
+
+4. 
+ 待研究项目：1.为什么存储数据要用 vector
+2.Rxjava和RxAndroid 的区别
+
+
+Subscriber 和 obServer 对比区别
+Subscriber的onCompleted方法调用完后会自动取消订阅
+
+
+
+Rxjava2中的两种观察者模式：
+ Observable(被观察者)/Observer（观察者）
+● Flowable(被观察者)/Subscriber(观察者)
+
+
+
+observable 通过create(),defer(),just()，from(),rang(),timer(),interval()等方式创建实例
+
+Observable中的just()方法 有什么作用呢
+
+类的HashCode
+
+
+
+
+
